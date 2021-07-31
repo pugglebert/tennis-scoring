@@ -80,12 +80,12 @@ public class Match {
      * @return A string representing the overall score of this game.
      */
     public String score() {
+        String matchScore = String.format("%d-%d", players[0].getWins(), players[1].getWins());
         for (int i = 0; i < players.length; i++) {
             if (playerWinsMatch(players[i], players[(i + 1) % 2])) {
-                return String.format("Match won by %s", players[i].getName());
+                return String.format("%s: Match won by %s", matchScore, players[i].getName());
             }
         }
-        String matchScore = String.format("%d-%d", players[0].getWins(), players[1].getWins());
         if (currentGame.hasStarted()) {
             String gameScore = currentGame.getGameScore();
             return String.format("%s, %s", matchScore, gameScore);
