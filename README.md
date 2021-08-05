@@ -1,4 +1,4 @@
-This program computes the tennis scores of two players throughout a match.
+This program computes the main.java.tennis scores of two players throughout a match.
 
 To start a match, create a match object with the names of the two players.
 

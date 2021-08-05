@@ -66,7 +66,6 @@ public class Match {
                 } else {
                     currentGame = new NormalGame(players[0], players[1]);
                 }
-                break;
             }
             if (playerWinsMatch(players[i], players[(i + 1) % 2])) {
                 hasBeenWon = true;
@@ -91,6 +90,23 @@ public class Match {
             return String.format("%s, %s", matchScore, gameScore);
         }
         return matchScore;
+    }
+
+    /**
+     * If this method returns true, a player has won and the match is over. If it returns false then the match is still
+     * in progress.
+     * @return A boolean which will be true if either player has won the match.
+     */
+    public boolean hasBeenWon() {
+        return hasBeenWon;
+    }
+
+    /**
+     * Returns an array containing the two players in this match.
+     * @return An array of the two players in the match.
+     */
+    public Player[] getPlayers() {
+        return players;
     }
 
 
